@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+                body{
+                    margin:0;
+                }
+                * {
+                box-sizing: border-box;
+                }
+                body{
+            
+                background-image:url(https://embedwistia-a.akamaihd.net/deliveries/d5ae8190f0aa7dfbe0b01f336f29d44094b967b5.webp?image_crop_resized=1280x720);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                
+                }
+                .main-head{
+                    display:flex;
+                    flex-direction: row  ;
+                }
+                .main{
+                    max-width: 30%;
+                    height: 100%;
+                    background-color:#eee;
+                    
+                }
+                .list{
+                    padding:20px 20px;
+                    font-size: 18px;
+                    color: #212529;
+                    font-family: "Public Sans", sans-serif;
+                }
+            
+        
+
+
+                #firstname{
+                    width:80%;
+                    padding:5px;
+                    margin-left: 10px;
+                    font-size: 10px;
+                    font-family: "Public Sans", sans-serif;
+                    color: #212529;
+                    border:none;
+                    
+                }
+                #firstname:focus{
+                    border:3px solid rgba(81, 203, 238, 1); 
+                }
+                #card{
+                    padding:10px 80px;
+                    max-width: 100%;
+                    background-color:#007BFF;
+                    border :none;
+                    border-radius: 5px;
+                    position: relative;
+                    top:-30px;
+                    left:10px;
+                    color:#ddd;
+                }
+                .convert{
+                    padding:10px 10px;
+                    background-color:#007BFF;
+                    border:none;
+                    border-radius: 5px;
+                    color:#ddd;
+                }
+                .join{
+                    margin-top:-30px;
+                }
+                #cross{
+                    background-color: red;
+                    color:#ddd;
+                    padding:7px 12px;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    font-family: "Public Sans", sans-serif;
+                    margin-left: 6.5em;
+                   
+                }
+                #demo li,#right-demo-right li{ 
+                font-size: 20px;
+                list-style-type: none;
+                color: #646464;
+                font-family:  "Public Sans", sans-serif;
+               cursor: pointer;
+                position: relative;
+                /* left: -30px; */
+                padding: 12px 10.8em 12px 40px;
+                margin-top: 20px;
+                background: #eee;
+                transition: 0.2s;
+                border-radius: 5px;
+                }
+                #right-demo li{
+                    padding:20px 40px;
+                font-size: 25px;
+                list-style-type: none;
+                color: #646464;
+                /* text-align: center; */
+                background-color: #eeee;
+                font-family:  "Public Sans", sans-serif;
+               cursor: pointer;
+                position: relative;
+                margin-top: 20px;
+                transition: 0.2s;
+                border-radius: 5px;
+                background-color: lightgrey;
+                }
+                .dm{
+                    background-color: lightgrey;
+                }
+                
+
+                #demo li:hover{
+                   background-color:#ddd;
+                   
+               }
+               .close,.right-close-right {
+                color:#eee;
+                position: absolute;
+                right:0px;
+                top: 0;
+                padding: 5px 10px;
+                background-color: red;
+                border-radius: 10px;
+                text-align: center;
+                top:8px;
+                right:10px;
+                   
+                }
+              
+                ul {
+                margin: 0;
+                padding: 0;
+                }
+
+                ul li{
+                    /* make the list items unselectable */
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    }
+
+                /* Set all odd list items to a different color (zebra-stripes) */
+                ul li:nth-child(odd) {
+                background: #f9f9f9;
+                }
+
+                /* Darker background-color on hover */
+                ul li:hover {
+                background:#eee;
+                }
+
+                .sub-main{
+                    margin-left:  10%;
+                    width: 30%;
+                    /* background-color:lightgrey; */
+                    
+
+                }
+                #list-name{
+                    text-align: center;
+                    font-size: 25px;
+                    font-family: sans-serif;
+
+                }
+                .boxes{
+                    background-color: #ddd;
+                }
+                #add-card-list,#add-another-card-list{
+                    background-color: #007BFF;
+                    border-radius: 5px;
+                    border:none;
+                    padding:10px 100px;
+                    color: #dddddd;
+                    margin:20px 10px;
+
+
+                }
+                #add-another-card-list{
+                    padding:10px 70px;
+                    margin-top: 5px ;
+                }
+                #listnames,#cardnames{
+                    padding:5px 45px;
+                    text-align: center;
+                    margin:10px ;
+                    border:2px solid aqua;
+                    
+                }
+                .combine{
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top:20px;
+                    
+                }
+                #add-list,#add-card{
+                    background-color: #007BFF;
+                    border : none;
+                    border-radius: 5px;
+                    color: #ddd;
+                    padding:5px 5px;
+                    margin-left:20px;
+
+                }
+                .myclass{
+                    color:red;
+                    background-color: red;
+                }
+                #add-cross{
+
+                    
+                    background-color: red;
+                    color:#ddd;
+                    padding:4px 10px;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    font-family: "Public Sans", sans-serif;
+                    margin-left: 1em;
+                    border: none;
+                   
+                    
+                }
+
+
+                    #sub-modal{
+                        margin-left: 10%;
+                    }
+
+                    .modal {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: scale(1.1);
+                    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+                }
+                .modal-content {
+                    position: absolute;
+                    top: 15%;
+                    left: 85%;
+                    transform: translate(-50%, -50%);
+                    background-color: white;
+                     /* padding: 1rem 1rem; */
+                    width: 15rem;
+                    border-radius: 0.5rem;
+                }
+                .close-button {
+                    float: right;
+                    width: 1.5rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    cursor: pointer;
+                    border-radius: 0.25rem;
+                    background-color: lightgray;
+                }
+                .close-button:hover {
+                    background-color: darkgray;
+                }
+                .show-modal {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: scale(1.0);
+                    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+                }
+
+
+                 
+                    
+
+
+                @media screen and (max-width: 600px){
+                    .main-head{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                   .main{
+                       max-width: 100%;
+                       
+                   }
+                   #card{
+                       padding:15px 130px  ;
+                       margin-left: 10px;
+                   }
+                 
+
+               }
+              
+                  
+                
+               
+        </style>
+    </head>
+    <body>
+        <header class="main-head">
+                <section class='main'>
+                        <div class="list">List</div>
+                        <div id="myDIV" class="header">
+                        
+                        <input type="text" id="firstname"  placeholder="Enter Card Name..."><br><br>
+                        <input type='button' id="card" onclick='change()'  value='Add New Card' />
+                        
+                        <input type='button' id="convert" onclick='transed()'  value='Add Card'  />
+                        <span id="cross" onclick="remove()">x</span>
+                        <ul id="demo"></ul>
+                    
+                </section>
+                <section class="sub-main">
+                    <div class="dm">
+                        <ul id="right-demo"></ul>
+                            <div id ="rdm">
+                            <ul id="right-demo-right"></ul>
+                            </div>
+                    </div>
+                            <div class="boxes">
+                                <input type="text" id="listnames"  onclick="names()" placeholder="Enter List Name" />
+                                <input type="text" id="cardnames"  onclick="cardnames()" placeholder="Enter Card Name" />
+                                <div class="combine">
+                                <input type="button" id="add-list" onclick="added()"  value="Add List"/>
+                                <input type="button" id="add-card" class= "red" onclick="addcard()"  onclick="double()" value="Add Card"/>
+                                <input type="button" id="add-cross"  value="x"/>
+                                </div>
+                                <input type="button" id="add-card-list"  onclick="cardlist()" value= "Add List"/>
+                                <input type="button" id="add-another-card-list"  onclick= "turned()" value= "Add  Another  Card"/>
+                            </div>
+
+                               
+
+                    
+                </section>
+                    
+                
+                
+                
+                    <section id="sub-modal">
+                        <button class="trigger">Click here to trigger the modal!</button>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close-button">×</span>
+                                    <h1 style="text-align:center">Sai</h1>
+                                </div>
+                            </div>  
+                    </section>
+                <!-- </section> -->
+
+        
+        </header>
+    </body>
+        <script>
+
+            var modal = document.querySelector(".modal");
+            var trigger = document.querySelector(".trigger");
+            var closeButton = document.querySelector(".close-button");
+            var modaldisplay = document.getElementsByClassName("red");
+
+
+
+          document.querySelector(".modal").style.display = "none";
+
+
+         document.getElementById("add-card").addEventListener ("click" , zero);
+            function zero(){
+                document.querySelector(".modal").style.display = "block";
+                document.querySelector(".modal").style.color ="red";
+
+            }
+
+            closeButton.addEventListener ("click" ,one);
+            function one(){
+                document.querySelector(".modal").style.display = "none";
+                document.querySelector(".trigger").style.color = "green";
+                
+
+            }
+
+
+     
+
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+            }
+
+            function windowOnClick(event) {
+                if (event.target === modal) {
+                    toggleModal();
+                }
+            }
+
+          
+
+            trigger.addEventListener("click", toggleModal);
+            closeButton.addEventListener("click", toggleModal);
+            window.addEventListener("click", windowOnClick);
+            
+               
+            
+
+
+            
+          
+          document.getElementById("convert").style.visibility = "hidden";
+          document.getElementById("firstname").style.visibility = "hidden";
+          document.getElementById("cross").style.visibility = "hidden";
+         
+            function change(){
+                document.getElementById("card").style.visibility  = "hidden";
+                
+                document.getElementById("card").style.backgroundColor = "#007BFF";
+                document.getElementById("card").style.color="#ddd";
+                document.getElementById("card").style.border="none";
+                document.getElementById("card").style.borderRadius="5px";
+
+
+                document.getElementById("convert").style.visibility = "visible";
+                document.getElementById("convert").style.backgroundColor = "#007BFF";
+                document.getElementById("convert").style.padding = "8px 8px";
+                document.getElementById("convert").style.color="#ddd";
+                document.getElementById("convert").style.border="none";
+                document.getElementById("convert").style.borderRadius = "5px";
+                document.getElementById("convert").style.marginLeft = "5px";
+                
+                
+                document.getElementById("firstname").style.visibility = "visible";
+                document.getElementById("cross").style.visibility = "visible";
+            }
+            function remove(){
+                document.getElementById("cross");
+                document.getElementById("convert").style.visibility = "hidden";
+                document.getElementById("card").style.visibility = "visible";
+                document.getElementById("cross").style.visibility = "hidden";
+                document.getElementById("firstname").style.visibility = "hidden";
+
+
+            }
+         
+            
+
+                
+
+
+              
+              
+             
+
+
+
+            function transed() { 
+
+
+
+                 // Create a new list item when clicking on the "Add" button
+                 var li = document.createElement("li");
+                // li.classList.add("order");
+                var inputValue = document.getElementById("firstname").value;
+
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === '') {
+                    // alert("You must write something!");
+                    display = "none";
+                } else {
+                    document.getElementById("demo").appendChild(li);
+                }
+                document.getElementById("firstname").value = "";
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+
+                var myNodelist = document.getElementsByClassName("order");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+
+
+            } 
+                   
+
+
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+             
+                }
+
+            }
+            
+                        
+
+
+                
+                
+ 
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            document.getElementById("listnames").style.display = "none";
+            document.getElementById("cardnames").style.display = "none";
+            document.getElementById("add-list").style.display = "none";
+            document.getElementById("add-cross").style.display = "none";
+            document.getElementById("add-another-card-list").style.display = "none";
+            document.getElementById("add-card").style.display = "none";
+            document.getElementById("list-name").style.display = "none";
+
+
+
+            function cardlist(){
+                document.getElementById("listnames").style.display = "block";
+            document.getElementById("add-list").style.display = "block";
+            document.getElementById("add-cross").style.display = "block";
+            document.getElementById("add-card-list").style.display = "none";
+            document.querySelector(".").style.display = "block";
+
+            }
+         
+          
+
+            function added(){
+                document.getElementById("listnames").style.display = "none";
+                document.getElementById("add-cross").style.display = "none";
+                document.getElementById("add-list").style.display = "none";
+                document.getElementById("add-another-card-list").style.display = "block";
+                
+
+              
+                   
+
+                    // Create a new list item when clicking on the "Add" button
+                var li = document.createElement("li");
+                // li.classList.add("order");
+                var inputValue = document.getElementById("listnames").value;
+
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === '') {
+                    // alert("You must write something!");
+                    display = "none";
+                } else {
+                    document.getElementById("right-demo").appendChild(li);
+                }
+                document.getElementById("listnames").value = "";
+            }
+
+          
+                   
+
+
+            
+            
+            
+            function turned(){
+                document.getElementById("cardnames").style.display = "block";
+                document.getElementById("add-card").style.display= "block";
+                document.getElementById("add-cross").style.display = "block";
+                document.getElementById("listnames").style.display = "none";
+                document.getElementById("add-another-card-list").style.display = "none";
+            }
+           
+           function addcard(){
+
+                // document.getElementsByClassName("modal").style.display = "block";
+
+
+
+               // Create a new list item when clicking on the "Add" button
+               var li = document.createElement("li");
+                li.classList.add("unorder");
+                var inputValue = document.getElementById("cardnames").value;
+
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === '') {
+                    // alert("You must write something!");
+                    display = "none";
+                } else {
+                    document.getElementById("right-demo-right").appendChild(li);
+                }
+                document.getElementById("cardnames").value = "";
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "right-close-right";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+
+                var myNodelist = document.getElementsByClassName("unorder");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "right-close-right";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+
+
+            } 
+                   
+
+
+                var close = document.getElementsByClassName("right-close-right");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+             
+                }
+                document.getElementById("add-cross").addEventListener("click", deleted);
+                function deleted(){
+                    document.getElementById("add-cross").style.display = "none";
+                    document.getElementById("add-card").style.display = "none";
+                    document.getElementById("add-another-card-list").style.display = "block";
+                }
+
+                
+                // document.getElementsByClassName("modal-content").style.display = "block";
+
+
+            }
+            
+
+
+            
+
+
+    </script>
+
+
+
+</html>
